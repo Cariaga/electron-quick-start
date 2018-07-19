@@ -1,9 +1,15 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 
+const {shell} = require('electron') // deconstructing assignment
+
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+
+
+
 
 function createWindow () {
   // Create the browser window.
@@ -37,6 +43,8 @@ app.on('window-all-closed', function () {
     app.quit()
   }
 })
+
+
 
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
