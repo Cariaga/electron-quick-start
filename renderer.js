@@ -12,7 +12,7 @@ $('#add-to-list').on('click', () => {
    let email = $('#Email').val()
 
    fs.appendFile('contacts', name + ',' + email + '\n')
-
+   alert("added "+ name);
    addEntry(name, email)
 })
 
@@ -47,6 +47,19 @@ function loadAndDisplayContacts() {
 
 loadAndDisplayContacts()
 
+function readDirectory(){
+      fs.readDir("C:\Users\Beta\Downloads\MEGA SAMPLES VOL-101", function(dir) {
+            // es5
+            for(var i = 0, l = dir.length; i < l; i++) {
+              var filePath = dir[i];
+              console.log(filePath)
+            }
+            // es6
+            for(let filePath of dir) {
+              console.log(filePath);
+            }
+          });
+}
 
 $('#click-counter').text(count.toString())
 $('#countbtn').on('click', () => {
